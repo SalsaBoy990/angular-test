@@ -1,0 +1,7 @@
+<app-username [username]="name" (userClicked)="onUserClicked($event)"></app-username>
+
+<h2 [ngClass]="{ 'updated': name !== 'András'}">{{ name }}</h2>
+
+<p *ngIf="name !== 'András'">Name updated!</p>
+
+<button (click)="onChangeName()">Change name</button>

@@ -1,0 +1,21 @@
+<div>
+  <h2>Hobbies</h2>
+
+  <p>Number of hobbies: {{ hobbies.length }}</p>
+  <input type="text" [(ngModel)]="hobby">
+  <button (click)="onAddHobby()">Add hobby</button>
+
+  <ul [ngClass]="{'hobbies-list': hasMoreThanThreeHobbies()}">
+    <app-hobby
+      *ngFor="let hobby of hobbies; let i = index"
+      [id]="'hobby-' + (i + 1)"
+      [hobbyName]="hobby"
+      [numberOfHobbies]="hobbies.length"
+      (hobbyDeleted)="onDeleteHobby($event)"
+      [ngStyle]="{ color: getColor(i+1) }"
+    >
+    </app-hobby>
+  </ul>
+
+  <p *ngIf="message !== ''" class="notification">{{ message }}</p>
+</div>

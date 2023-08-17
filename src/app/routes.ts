@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {AccountComponent} from "./pages/account/account.component";
-import {BlogComponent} from "./pages/blog/blog.component";
+import { Routes } from '@angular/router';
 import {HomeComponent} from "./pages/home/home.component";
 import {DetailsComponent} from "./components/housing/details/details.component";
+import {AccountComponent} from "./pages/account/account.component";
+import {BlogComponent} from "./pages/blog/blog.component";
 
-const routes: Routes = [
+
+const routeConfig: Routes = [
   {
     path: '',
     component: HomeComponent,
@@ -22,8 +22,4 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent},
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export default routeConfig;
